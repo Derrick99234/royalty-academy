@@ -3,6 +3,7 @@ import logo from "../../public/royalty-academy-logo.jpeg";
 import heroImage from "../../public/images/impact-1000-cohort-group-photo-1.jpg";
 import legacyImage from "../../public/images/impact-1000-cohort-group-photo-2.jpg";
 import leadershipImage from "../../public/images/royalty-academy-leadership-keynote.jpg";
+import patronPortrait from "../../public/images/isaiah-macwealth-grand-patron-portrait.png";
 import galleryAiFacilitator from "../../public/images/impact-1000-ai-facilitator-session.jpg";
 import galleryCorpsQueue from "../../public/images/impact-1000-corps-members-queue.jpg";
 import galleryCorpsSeated from "../../public/images/impact-1000-corps-members-seated.jpg";
@@ -92,6 +93,7 @@ const navLinks = [
   { href: "#programs", label: "Programs" },
   { href: "#about", label: "About" },
   { href: "#giving-back", label: "Giving Back" },
+  { href: "#grand-patron", label: "Grand Patron" },
   { href: "#gallery", label: "Gallery" },
   { href: "#contact", label: "Contact" },
 ];
@@ -201,6 +203,59 @@ export default function Home() {
           </div>
           <div className="absolute top-0 right-0 -mr-40 -mt-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10" />
           <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-[500px] h-[500px] bg-tertiary/5 rounded-full blur-3xl -z-10" />
+        </section>
+
+        {/* ABOUT THE GRAND PATRON */}
+        <section className="py-24 bg-surface-container-low" id="grand-patron">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+              <div className="lg:col-span-2 flex justify-center">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-linear-to-br from-primary to-on-primary-fixed-variant p-2 shadow-2xl">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-surface-container-high">
+                    <Image
+                      src={patronPortrait}
+                      alt="Dr. Isaiah Macwealth, Founder of Royalty Academy and Grand Patron of Higher Impact Club"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 w-16 h-16 rounded-full bg-tertiary border-4 border-surface-container-low flex items-center justify-center shadow-lg">
+                    <span
+                      className="material-symbols-outlined text-on-tertiary text-3xl"
+                      style={{ fontVariationSettings: "'FILL' 1" }}
+                    >
+                      workspace_premium
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-3 space-y-6">
+                <span className="text-tertiary font-bold tracking-widest uppercase text-sm">
+                  Leadership
+                </span>
+                <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface">
+                  About the Grand Patron
+                </h2>
+                <div className="gold-accent-line" />
+                <p className="text-xl font-headline font-bold text-on-surface">
+                  Dr. Isaiah Macwealth
+                </p>
+                <p className="text-sm font-label font-semibold text-primary uppercase tracking-wide">
+                  Founder, Royalty Academy &middot; Grand Patron, Higher Impact
+                  Club
+                </p>
+                <p className="text-lg text-on-surface-variant leading-relaxed">
+                  Dr. Isaiah Macwealth founded Royalty Academy to equip
+                  entrepreneurs, career enthusiasts, and business
+                  professionals with practical, high-quality training. As
+                  Grand Patron of the Higher Impact Club, he champions
+                  initiatives such as the IMPACT 1000 High-Income Skills
+                  Training, extending free, practical skills training to
+                  youths in dedication to youth development and national
+                  transformation.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* MISSION */}
@@ -409,6 +464,36 @@ export default function Home() {
           </div>
         </section>
 
+        {/* GALLERY */}
+        <section className="py-24 bg-surface-container-low" id="gallery">
+          <div className="max-w-7xl mx-auto px-6 space-y-16">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <span className="text-tertiary font-bold tracking-widest uppercase text-sm">
+                Moments
+              </span>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface">
+                Gallery
+              </h2>
+              <div className="gold-accent-line" />
+              <p className="text-on-surface-variant max-w-2xl mt-4">
+                Highlights from the IMPACT 1000 High-Income Skills Training
+                cohort, in partnership with Higher Impact Club.
+              </p>
+            </div>
+            <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 [column-fill:_balance]">
+              {galleryImages.map((image) => (
+                <div
+                  key={image.alt}
+                  className="mb-4 break-inside-avoid rounded-2xl overflow-hidden border border-surface-variant shadow-sm hover:shadow-xl transition-shadow duration-300"
+                >
+                  <Image src={image.src} alt={image.alt} className="w-full h-auto" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+
         {/* JOIN US */}
         <section className="py-24 bg-surface">
           <div className="max-w-7xl mx-auto px-6">
@@ -467,42 +552,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* GALLERY */}
-        <section className="py-24 bg-surface-container-low" id="gallery">
-          <div className="max-w-7xl mx-auto px-6 space-y-16">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <span className="text-tertiary font-bold tracking-widest uppercase text-sm">
-                Moments
-              </span>
-              <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface">
-                Gallery
-              </h2>
-              <div className="gold-accent-line" />
-              <p className="text-on-surface-variant max-w-2xl mt-4">
-                Highlights from the IMPACT 1000 High-Income Skills Training
-                cohort, in partnership with Higher Impact Club.
-              </p>
-            </div>
-            <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 [column-fill:_balance]">
-              {galleryImages.map((image) => (
-                <div
-                  key={image.alt}
-                  className="mb-4 break-inside-avoid rounded-2xl overflow-hidden border border-surface-variant shadow-sm hover:shadow-xl transition-shadow duration-300"
-                >
-                  <Image src={image.src} alt={image.alt} className="w-full h-auto" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-
       {/* FOOTER */}
       <footer
         id="contact"
         className="bg-surface-container w-full py-12 px-6 border-t border-tertiary/30"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="space-y-4">
             <Image src={logo} alt="Royalty Academy" className="h-14 w-auto" />
             <p className="font-body text-sm text-on-surface-variant">
@@ -511,7 +566,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="font-headline font-semibold text-on-surface">
               About
             </h4>
@@ -521,7 +576,7 @@ export default function Home() {
               enthusiasts, and business professionals to excel in their
               respective fields.
             </p>
-          </div>
+          </div> */}
 
           <div className="space-y-4">
             <h4 className="font-headline font-semibold text-on-surface">
@@ -548,12 +603,7 @@ export default function Home() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">location_on</span>
-                <span className="font-body text-sm text-on-surface-variant">
-                  Ark of Light for all Nations,
-                  <br />
-                  11 Kudirat Abiola Way,
-                  <br />
-                  Alausa, Ikeja, Lagos.
+                <span className="font-body text-sm text-on-surface-variant"> Ark of Light for all Nations, 11 Kudirat Abiola Way, Alausa, Ikeja, Lagos.
                 </span>
               </li>
             </ul>
