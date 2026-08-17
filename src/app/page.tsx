@@ -1,42 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../../public/royalty-academy-logo.jpeg";
-import heroImage from "../../public/images/impact-1000-cohort-group-photo-1.jpg";
 import legacyImage from "../../public/images/impact-1000-cohort-group-photo-2.jpg";
-import leadershipImage from "../../public/images/royalty-academy-leadership-keynote.jpg";
 import patronPortrait from "../../public/images/isaiah-macwealth-grand-patron-portrait.png";
-import galleryAiFacilitator from "../../public/images/impact-1000-ai-facilitator-session.jpg";
-import galleryCorpsQueue from "../../public/images/impact-1000-corps-members-queue.jpg";
-import galleryCorpsSeated from "../../public/images/impact-1000-corps-members-seated.jpg";
-import gallerySkillTeam from "../../public/images/impact-1000-high-income-skill-team.jpg";
-import gallerySkillsSession from "../../public/images/impact-1000-high-income-skills-session.jpg";
-import gallerySpeakerPodium from "../../public/images/impact-1000-speaker-podium-session.jpg";
-import galleryTrainingHall from "../../public/images/impact-1000-training-hall-screens.jpg";
-import galleryTrainingAudience from "../../public/images/impact-1000-training-session-audience.jpg";
-import galleryTrainingVenue from "../../public/images/impact-1000-training-venue-wide.jpg";
 import galleryChurchRegistration from "../../public/images/royalty-academy-church-registration.jpg";
-import galleryCorpsRegistration from "../../public/images/royalty-academy-corps-registration-desk.jpg";
-import galleryOutdoorAttendees from "../../public/images/royalty-academy-outdoor-event-attendees.jpg";
-import galleryOutdoorAudience from "../../public/images/royalty-academy-outdoor-audience.jpg";
 import galleryOutdoorRegistration from "../../public/images/royalty-academy-outdoor-registration.jpg";
-
-const galleryImages = [
-  { src: heroImage, alt: "IMPACT 1000 cohort group photo with NYSC corps members" },
-  { src: gallerySpeakerPodium, alt: "Royalty Academy facilitator speaking at the IMPACT 1000 training session" },
-  { src: galleryTrainingAudience, alt: "Corps members watching the IMPACT 1000 training session on screen" },
-  { src: galleryAiFacilitator, alt: "Facilitator Collins O. Arase teaching the Artificial Intelligence session" },
-  { src: gallerySkillsSession, alt: "Learn a High Income Skill training session screens" },
-  { src: galleryTrainingHall, alt: "IMPACT 1000 training hall filled with corps members" },
-  { src: galleryCorpsSeated, alt: "NYSC corps members seated at the IMPACT 1000 training" },
-  { src: galleryTrainingVenue, alt: "Wide view of the IMPACT 1000 training venue" },
-  { src: legacyImage, alt: "IMPACT 1000 cohort group photo, second batch" },
-  { src: galleryCorpsRegistration, alt: "Corps members mentorship and counselling registration desk" },
-  { src: galleryOutdoorAttendees, alt: "Royalty Academy outdoor event attendees" },
-  { src: galleryOutdoorRegistration, alt: "Outdoor registration at a Royalty Academy community event" },
-  { src: galleryOutdoorAudience, alt: "Outdoor audience at a Royalty Academy community event" },
-  { src: galleryChurchRegistration, alt: "Corps members registering at a Royalty Academy partner church event" },
-  { src: gallerySkillTeam, alt: "Royalty Academy team at the Learn a High Income Skill registration table" },
-  { src: galleryCorpsQueue, alt: "NYSC corps members queuing to register for IMPACT 1000 training" },
-] as const;
+import { galleryGroups } from "./gallery-data";
 
 const trainingTopics = [
   {
@@ -480,14 +449,39 @@ export default function Home() {
                 cohort, in partnership with Higher Impact Club.
               </p>
             </div>
-            <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 [column-fill:_balance]">
-              {galleryImages.map((image) => (
-                <div
-                  key={image.alt}
-                  className="mb-4 break-inside-avoid rounded-2xl overflow-hidden border border-surface-variant shadow-sm hover:shadow-xl transition-shadow duration-300"
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {galleryGroups.map((group) => (
+                <Link
+                  key={group.id}
+                  href={`/gallery#${group.id}`}
+                  className="group relative block rounded-2xl overflow-hidden border border-surface-variant shadow-sm hover:shadow-xl transition-shadow duration-300"
                 >
-                  <Image src={image.src} alt={image.alt} className="w-full h-auto" />
-                </div>
+                  <div className="relative h-64 sm:h-72 w-full">
+                    <Image
+                      src={group.images[0].src}
+                      alt={group.images[0].alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-on-surface/80 via-on-surface/30 to-transparent p-6 pt-16">
+                    <div className="flex items-end justify-between gap-4">
+                      <div>
+                        <span className="text-tertiary font-bold tracking-widest uppercase text-xs">
+                          {group.images.length}{" "}
+                          {group.images.length === 1 ? "photo" : "photos"}
+                        </span>
+                        <h3 className="text-2xl font-headline font-bold text-on-primary mt-1">
+                          {group.label}
+                        </h3>
+                      </div>
+                      <span className="shrink-0 rounded-full bg-surface/90 text-on-surface font-label font-bold py-2 px-4 shadow-sm">
+                        +{group.images.length}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
