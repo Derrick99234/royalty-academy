@@ -596,6 +596,15 @@ export default function Home() {
                 </a>
               </li>
               <li className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-tertiary text-[20px]">call</span>
+                <a
+                  className="font-body text-sm text-on-surface-variant hover:text-primary transition-colors"
+                  href="tel:+2348168031412"
+                >
+                  +234 816 803 1412
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">location_on</span>
                 <span className="font-body text-sm text-on-surface-variant"> Ark of Light for all Nations, 11 Kudirat Abiola Way, Alausa, Ikeja, Lagos.
                 </span>
