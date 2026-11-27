@@ -138,20 +138,6 @@ const testimonials = [
       "The step-by-step guidance on sourcing from China, shipping logistics, and handling real-life challenges gave me the clarity and confidence to fully pursue this business. It's amazing to see some of us already shipping in containers, proof of how impactful this training was!",
   },
   {
-    name: "Udodi Ifeoma Lilibeth",
-    role: "NYSC Corps Member, Batch C (Rivers)",
-    tag: "Artificial Intelligence",
-    quote:
-      "For four weeks, I was trained in Artificial Intelligence at no cost. The sessions were practical, insightful, and transformative. Sir, you didn't just sponsor a training — you invested in destinies.",
-  },
-  {
-    name: "David Otaru",
-    role: "NYSC Corps Member, Batch B Stream 1 (Rivers)",
-    tag: "Web Design",
-    quote:
-      "I have gained practical skills that I can apply to develop websites, showcase my products and skills, and create opportunities to offer web design services online. Your generosity has given us more than a skill; it has given us a platform to grow and become productive.",
-  },
-  {
     name: "Emenghagawon Success",
     role: "NYSC Corps Member, Batch B Stream 2 (Lagos)",
     tag: "Digital Marketing",
@@ -772,7 +758,7 @@ export default function Home() {
                 productive young people across Nigeria.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {testimonials.map((t) => (
                 <figure
                   key={t.name}
