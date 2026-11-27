@@ -42,6 +42,28 @@ function groupNewImages(
 
 export const galleryGroups: GalleryGroup[] = [
   {
+    id: "certificate-rivers-batch-2",
+    label: "Certificate Award Batch 2, Rivers State",
+    images: groupNewImages(
+      "certificate-award-batch-2-rivers-november-2026",
+      "impact-1000-certificate-award-batch-2-rivers-state",
+      1,
+      11,
+      "Certificate Award Batch 2, Rivers State",
+    ),
+  },
+  {
+    id: "2nd-cohort",
+    label: "2nd Cohort Training, Rivers State",
+    images: groupNewImages(
+      "training-2nd-cohort-rivers-november-2026",
+      "impact-1000-training-2nd-cohort-rivers-state",
+      1,
+      36,
+      "2nd Cohort Training, Rivers State",
+    ),
+  },
+  {
     id: "cds-outreach",
     label: "CDS Outreach, Obio-Akpor, Rivers State",
     images: groupNewImages(
