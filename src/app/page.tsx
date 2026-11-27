@@ -58,9 +58,112 @@ const accentClasses: Record<string, { bg: string; text: string }> = {
   tertiary: { bg: "bg-tertiary/10 group-hover:bg-tertiary", text: "text-tertiary group-hover:text-on-tertiary" },
 };
 
+const impactHighlights = [
+  {
+    icon: "volunteer_activism",
+    title: "100% Free",
+    description: "Fully sponsored by our Grand Patron, Dr. Isaiah Macwealth.",
+  },
+  {
+    icon: "calendar_month",
+    title: "4-Week Training",
+    description: "Delivered by seasoned facilitators over four weeks.",
+  },
+  {
+    icon: "devices",
+    title: "Physical & Virtual",
+    description: "Learn in person at our training centres and online.",
+  },
+  {
+    icon: "workspace_premium",
+    title: "Certificate Awarded",
+    description: "Every candidate is certified upon completion of the training.",
+  },
+] as const;
+
+const impactStates = [
+  {
+    state: "Lagos State",
+    skills: [
+      "Cybersecurity",
+      "Linux & Cloud Computing",
+      "Digital Marketing",
+      "Web Design",
+      "Data Analysis",
+      "Artificial Intelligence (AI)",
+      "Graphic Design",
+      "Mini-Importation & Dropshipping",
+    ],
+    centres: [
+      "H4 Hall, Ark of Light, Plot 11C Kudirat Abiola Way, Ikeja, Lagos",
+      "Ark of Light Lekki Hub, Lekki, Lagos",
+    ],
+    phones: ["0803 887 5025", "0902 664 8287"],
+  },
+  {
+    state: "Rivers State",
+    skills: [
+      "Web Design",
+      "Data Analysis",
+      "Artificial Intelligence (AI)",
+      "Graphic Design",
+    ],
+    centres: [
+      "No 3 Adele Street, behind Gowon Stadium, Rumuomasi, Port Harcourt",
+    ],
+    phones: ["0903 364 5305", "0903 885 2702"],
+  },
+] as const;
+
+const testimonials = [
+  {
+    name: "George Mercy Chukwuamaka",
+    role: "Embryologist, Fertility Clinic, Lagos",
+    tag: "Alumni",
+    quote:
+      "I benefited immensely from both the digital skill training and the mentorship programme. It was an experience that offered me more than knowledge; it opened doors, broadened my opportunities and gave me direction. Through its mentorship initiative, I was able to secure my current employment.",
+  },
+  {
+    name: "Malik Kafilat Adejoke",
+    role: "Surveyor, Hitech Construction Company, Lagos",
+    tag: "Alumni",
+    quote:
+      "Through the digital skills I learnt in the Data Analysis training, I gained a better understanding of how to work with data using Excel. I can now use Excel more confidently to process and organise surveying data, plot information, and transfer it into other surveying applications.",
+  },
+  {
+    name: "Nkwo Chimdike",
+    role: "NYSC Corps Member, Batch B (Lagos)",
+    tag: "Mini Importation",
+    quote:
+      "The step-by-step guidance on sourcing from China, shipping logistics, and handling real-life challenges gave me the clarity and confidence to fully pursue this business. It's amazing to see some of us already shipping in containers, proof of how impactful this training was!",
+  },
+  {
+    name: "Udodi Ifeoma Lilibeth",
+    role: "NYSC Corps Member, Batch C (Rivers)",
+    tag: "Artificial Intelligence",
+    quote:
+      "For four weeks, I was trained in Artificial Intelligence at no cost. The sessions were practical, insightful, and transformative. Sir, you didn't just sponsor a training — you invested in destinies.",
+  },
+  {
+    name: "David Otaru",
+    role: "NYSC Corps Member, Batch B Stream 1 (Rivers)",
+    tag: "Web Design",
+    quote:
+      "I have gained practical skills that I can apply to develop websites, showcase my products and skills, and create opportunities to offer web design services online. Your generosity has given us more than a skill; it has given us a platform to grow and become productive.",
+  },
+  {
+    name: "Emenghagawon Success",
+    role: "NYSC Corps Member, Batch B Stream 2 (Lagos)",
+    tag: "Digital Marketing",
+    quote:
+      "I learnt Digital Marketing and I was taught how to use ChatGPT for promoting which has made me to be a good copywriter. This training has equipped me with practical skills that will make a lasting impact in my life.",
+  },
+] as const;
+
 const navLinks = [
   { href: "#programs", label: "Programs" },
   { href: "#about", label: "About" },
+  { href: "#impact-1000", label: "IMPACT 1000" },
   { href: "#giving-back", label: "Giving Back" },
   { href: "#grand-patron", label: "Grand Patron" },
   { href: "#gallery", label: "Gallery" },
@@ -163,7 +266,7 @@ export default function Home() {
                       </div>
                     </div>
                     <p className="text-sm font-semibold text-on-surface">
-                      Several hundred graduands and counting
+                      About 1,000 corps members trained &amp; graduated
                     </p>
                   </div>
                 </div>
@@ -213,15 +316,36 @@ export default function Home() {
                   Club
                 </p>
                 <p className="text-lg text-on-surface-variant leading-relaxed">
-                  Dr. Isaiah Macwealth founded Royalty Academy to equip
-                  entrepreneurs, career enthusiasts, and business
-                  professionals with practical, high-quality training. As
-                  Grand Patron of the Higher Impact Club, he champions
-                  initiatives such as the IMPACT 1000 High-Income Skills
-                  Training, extending free, practical skills training to
-                  youths in dedication to youth development and national
-                  transformation.
+                  Driven by a passion for transforming lives and raising a
+                  generation of productive, self-reliant and purpose-driven
+                  individuals, Dr. Isaiah Macwealth has championed several
+                  empowerment and humanitarian initiatives aimed at
+                  addressing poverty, creating opportunities and improving
+                  the quality of life of people across society.
                 </p>
+                <p className="text-lg text-on-surface-variant leading-relaxed">
+                  Through platforms including the{" "}
+                  <strong className="text-on-surface">OneSound Charity</strong>,{" "}
+                  <strong className="text-on-surface">Royalty Academy</strong>,{" "}
+                  <strong className="text-on-surface">Ark Food Bank</strong>,{" "}
+                  <strong className="text-on-surface">Football Talent Hunt</strong>{" "}
+                  and{" "}
+                  <strong className="text-on-surface">Higher Impact Club</strong>,
+                  he continues to invest in human capital development through
+                  free skills acquisition, vocational and digital training,
+                  entrepreneurship development, mentorship and business
+                  empowerment. His humanitarian interventions also extend to
+                  providing food, clothing, emergency assistance and other
+                  support to vulnerable individuals, families and underserved
+                  communities.
+                </p>
+                <blockquote className="border-l-4 border-tertiary pl-6 text-lg italic text-on-surface leading-relaxed">
+                  True empowerment goes beyond temporary assistance. It
+                  involves equipping people with the skills, knowledge,
+                  resources and opportunities they need to become
+                  economically productive, independent and valuable
+                  contributors to society.
+                </blockquote>
               </div>
             </div>
           </div>
@@ -247,6 +371,38 @@ export default function Home() {
                 business and career landscape through high-quality, practical
                 training programs that are tailored to their unique needs.
               </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+              <div className="bg-primary text-on-primary p-8 md:p-10 rounded-3xl shadow-lg space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-3xl">visibility</span>
+                  <h3 className="text-2xl font-headline font-bold">
+                    IMPACT 1000 Vision
+                  </h3>
+                </div>
+                <p className="text-primary-fixed leading-relaxed">
+                  In partnership with NYSC SAED, Royalty Academy in
+                  collaboration with Higher Impact Club (HIC) is committed to
+                  training and empowering at least 1,000 Corps Members in
+                  every state across Nigeria annually through the IMPACT 1000
+                  Free Skill Acquisition Training Program, equipping them with
+                  high-income, in-demand skills for a competitive future.
+                </p>
+              </div>
+              <div className="bg-surface-container-lowest p-8 md:p-10 rounded-3xl shadow-lg border border-surface-container-high space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-3xl text-tertiary">flag</span>
+                  <h3 className="text-2xl font-headline font-bold text-on-surface">
+                    IMPACT 1000 Mission
+                  </h3>
+                </div>
+                <p className="text-on-surface-variant leading-relaxed">
+                  To equip young graduates with high-income, in-demand and
+                  future-ready skills that enhance their employability, foster
+                  entrepreneurship and give them a competitive edge in
+                  today&apos;s dynamic labour market.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -342,8 +498,10 @@ export default function Home() {
                 </div>
                 <p className="text-lg text-on-surface-variant leading-relaxed">
                   With a proven track record of excellence, Royalty Academy
-                  has produced several hundreds of notable graduands, as we
-                  continue to strive towards creating a community of
+                  has produced several hundreds of notable graduands. Through
+                  the IMPACT 1000 Free Skill Acquisition Project alone, we have
+                  trained and graduated about 1,000 NYSC corps members across
+                  Lagos and Rivers States, as we continue to strive towards creating a community of
                   successful professionals who make a positive impact in
                   their respective industries.
                 </p>
@@ -351,10 +509,10 @@ export default function Home() {
                   <div className="p-6 rounded-2xl bg-surface-container border border-surface-variant text-center">
                     <span className="material-symbols-outlined text-primary text-4xl mb-3">school</span>
                     <div className="text-3xl font-headline font-black text-on-surface">
-                      500+
+                      1,000
                     </div>
                     <div className="text-sm font-medium text-on-surface-variant mt-1">
-                      Graduands
+                      Corps Members Trained
                     </div>
                   </div>
                   <div className="p-6 rounded-2xl bg-surface-container border border-surface-variant text-center">
@@ -367,12 +525,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="p-6 rounded-2xl bg-surface-container border border-surface-variant text-center">
-                    <span className="material-symbols-outlined text-tertiary text-4xl mb-3">language</span>
+                    <span className="material-symbols-outlined text-tertiary text-4xl mb-3">map</span>
                     <div className="text-xl font-headline font-bold text-on-surface mt-2">
-                      Global
+                      Lagos &amp; Rivers
                     </div>
                     <div className="text-sm font-medium text-on-surface-variant mt-1">
-                      Reach
+                      Training States
                     </div>
                   </div>
                 </div>
@@ -422,13 +580,207 @@ export default function Home() {
               </p>
               <p className="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-3xl mx-auto">
                 Through the <strong className="text-tertiary">IMPACT 1000</strong>{" "}
-                High-Income Skills Training, we&apos;ve equipped corps members
-                with practical, in-demand skills &mdash; Data Analysis, Web
-                Development, Graphic Design, and Artificial Intelligence &mdash;
-                starting with our first cohort at the Port Harcourt Training
-                Centre, to enhance their employability and entrepreneurship in
-                today&apos;s economy.
+                Free Skill Acquisition Project, in partnership with NYSC SAED,
+                we&apos;ve equipped about 1,000 corps members across Lagos and
+                Rivers States with practical, in-demand skills &mdash; from
+                Cybersecurity, Cloud Computing and Digital Marketing to Data
+                Analysis, Web Design, Graphic Design and Artificial
+                Intelligence &mdash; to enhance their employability and
+                entrepreneurship in today&apos;s economy.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* IMPACT 1000 */}
+        <section className="py-24 bg-surface" id="impact-1000">
+          <div className="max-w-7xl mx-auto px-6 space-y-16">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <span className="text-tertiary font-bold tracking-widest uppercase text-sm">
+                Free Skill Acquisition Project
+              </span>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface">
+                IMPACT 1000
+              </h2>
+              <div className="gold-accent-line" />
+              <p className="text-lg font-headline font-semibold text-primary mt-4">
+                Empowering Corps Members. Building Skills. Creating
+                Opportunities.
+              </p>
+              <p className="text-on-surface-variant max-w-3xl">
+                An initiative of Dr. Isaiah Macwealth, IMPACT 1000 trains and
+                empowers serving corps members with high-earning skills to
+                give them a competitive edge in the labour market, and
+                encourages advancement into entrepreneurship for those with
+                business inclination.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {impactHighlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-surface-container-low rounded-2xl p-6 border border-surface-variant text-center space-y-3"
+                >
+                  <span className="material-symbols-outlined text-primary text-4xl">
+                    {item.icon}
+                  </span>
+                  <h3 className="text-lg font-headline font-bold text-on-surface">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {impactStates.map((s) => (
+                <div
+                  key={s.state}
+                  className="bg-surface rounded-3xl p-8 md:p-10 border border-surface-variant shadow-sm space-y-6"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-tertiary text-3xl">location_on</span>
+                    <h3 className="text-2xl font-headline font-bold text-on-surface">
+                      {s.state}
+                    </h3>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-label font-semibold uppercase tracking-wide text-primary mb-3">
+                      Training Areas
+                    </h4>
+                    <ul className="flex flex-wrap gap-2">
+                      {s.skills.map((skill) => (
+                        <li
+                          key={skill}
+                          className="bg-primary/10 text-primary text-sm font-semibold py-1.5 px-3 rounded-full"
+                        >
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-label font-semibold uppercase tracking-wide text-primary mb-3">
+                      Training {s.centres.length === 1 ? "Centre" : "Centres"}
+                    </h4>
+                    <ul className="space-y-2">
+                      {s.centres.map((centre) => (
+                        <li key={centre} className="flex items-start gap-2 text-on-surface-variant">
+                          <span className="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">apartment</span>
+                          {centre}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-label font-semibold uppercase tracking-wide text-primary mb-3">
+                      Enquiries
+                    </h4>
+                    <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                      {s.phones.map((phone) => (
+                        <li key={phone}>
+                          <a
+                            href={`tel:+234${phone.replace(/\s/g, "").slice(1)}`}
+                            className="flex items-center gap-2 text-on-surface font-semibold hover:text-primary transition-colors"
+                          >
+                            <span className="material-symbols-outlined text-tertiary text-[20px]">call</span>
+                            {phone}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2 bg-linear-to-br from-primary to-on-primary-fixed-variant text-on-primary rounded-3xl p-8 md:p-10 space-y-4 shadow-lg">
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-3xl">diversity_3</span>
+                  <h3 className="text-2xl font-headline font-bold">
+                    Mentorship &amp; Networking Program
+                  </h3>
+                </div>
+                <p className="text-primary-fixed leading-relaxed">
+                  Through our Mentorship and Networking Program, successful
+                  IMPACT 1000 graduates are connected with experienced
+                  mentors, professionals and entrepreneurs across diverse
+                  career fields and business sectors for career guidance,
+                  professional development, business insights, meaningful
+                  networking and access to valuable relationships that help
+                  them navigate their career paths and maximise their
+                  potential.
+                </p>
+              </div>
+              <div className="bg-surface-container-low rounded-3xl p-8 md:p-10 border border-tertiary/30 space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-3xl text-tertiary">how_to_reg</span>
+                  <h3 className="text-2xl font-headline font-bold text-on-surface">
+                    How to Register
+                  </h3>
+                </div>
+                <p className="text-on-surface-variant leading-relaxed">
+                  Pick up a form from any of our officials stationed at the
+                  NYSC Secretariat of your state.
+                </p>
+                <a
+                  href="mailto:impact1000team@gmail.com"
+                  className="flex items-center gap-2 text-primary font-semibold hover:underline break-all"
+                >
+                  <span className="material-symbols-outlined text-[20px]">mail</span>
+                  impact1000team@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section className="py-24 bg-surface-container-low" id="testimonials">
+          <div className="max-w-7xl mx-auto px-6 space-y-16">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <span className="text-tertiary font-bold tracking-widest uppercase text-sm">
+                Voices of Impact
+              </span>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface">
+                Testimonials
+              </h2>
+              <div className="gold-accent-line" />
+              <p className="text-on-surface-variant max-w-2xl mt-4">
+                IMPACT 1000 is more than a skills acquisition programme; it is
+                a movement raising skilled, empowered and economically
+                productive young people across Nigeria.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((t) => (
+                <figure
+                  key={t.name}
+                  className="bg-surface rounded-2xl p-8 border border-surface-variant shadow-sm flex flex-col gap-6"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="material-symbols-outlined text-tertiary text-4xl">format_quote</span>
+                    <span className="bg-tertiary/10 text-tertiary text-xs font-bold uppercase tracking-wide py-1 px-3 rounded-full">
+                      {t.tag}
+                    </span>
+                  </div>
+                  <blockquote className="text-on-surface-variant leading-relaxed flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="border-t border-surface-variant pt-4">
+                    <div className="font-headline font-bold text-on-surface">
+                      {t.name}
+                    </div>
+                    <div className="text-sm text-on-surface-variant">
+                      {t.role}
+                    </div>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
@@ -606,7 +958,7 @@ export default function Home() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">location_on</span>
-                <span className="font-body text-sm text-on-surface-variant"> Ark of Light for all Nations, 11 Kudirat Abiola Way, Alausa, Ikeja, Lagos.
+                <span className="font-body text-sm text-on-surface-variant">H4 Hall, Ark of Light for all Nations, 11 Kudirat Abiola Way, Alausa, Ikeja, Lagos.
                 </span>
               </li>
             </ul>
