@@ -160,6 +160,22 @@ const testimonials = [
   },
 ] as const;
 
+const testimonialCards = [
+  { slug: "okafor-chinecherem-lagos", name: "Okafor Chinecherem", skill: "Mini Importation", state: "Lagos" },
+  { slug: "rebecca-akpan-lagos", name: "Rebecca Akpan", skill: "Digital Marketing", state: "Lagos" },
+  { slug: "nefisat-bashir-lagos", name: "Nefisat Bashir", skill: "Cybersecurity", state: "Lagos" },
+  { slug: "okon-esther-paul-rivers", name: "Okon Esther Paul", skill: "Data Analysis", state: "Rivers" },
+  { slug: "udodi-ifeoma-lilibeth-rivers", name: "Udodi Ifeoma Lilibeth", skill: "Artificial Intelligence", state: "Rivers" },
+  { slug: "nkemdy-jennifer-rivers", name: "Nkemdy Jennifer C.", skill: "Graphic Design", state: "Rivers" },
+  { slug: "odafe-darlington-oyibo-rivers", name: "Odafe Darlington Oyibo", skill: "Web Development", state: "Rivers" },
+  { slug: "david-otaru-rivers", name: "David Otaru", skill: "Web Design", state: "Rivers" },
+  { slug: "ndukwe-oluebube-rivers", name: "Ndukwe Oluebube P.", skill: "Graphic Design", state: "Rivers" },
+  { slug: "agagwu-ifunanya-rivers", name: "Agagwu Ifunanya V.", skill: "Graphic Design", state: "Rivers" },
+].map((card) => ({
+  ...card,
+  src: `/images/testimonials/impact-1000-testimonial-${card.slug}.jpeg`,
+}));
+
 const navLinks = [
   { href: "#programs", label: "Programs" },
   { href: "#about", label: "About" },
@@ -781,6 +797,46 @@ export default function Home() {
                   </figcaption>
                 </figure>
               ))}
+            </div>
+
+            <div className="space-y-8">
+              <div className="text-center space-y-2">
+                <h3 className="text-2xl md:text-3xl font-headline font-bold text-on-surface">
+                  Thank You Notes from Our Corps Members
+                </h3>
+                <p className="text-on-surface-variant">
+                  Tap a card to read the full message.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {testimonialCards.map((card) => (
+                  <a
+                    key={card.slug}
+                    href={card.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block rounded-xl overflow-hidden border border-surface-variant bg-surface shadow-sm hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <div className="relative aspect-5/6 w-full overflow-hidden">
+                      <Image
+                        src={card.src}
+                        alt={`Thank you message to Dr. Isaiah Macwealth from ${card.name}, IMPACT 1000 ${card.skill} trainee (${card.state})`}
+                        fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-3">
+                      <div className="font-headline font-bold text-sm text-on-surface truncate">
+                        {card.name}
+                      </div>
+                      <div className="text-xs text-on-surface-variant">
+                        {card.skill} &middot; {card.state}
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </section>
