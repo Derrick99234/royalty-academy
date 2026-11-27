@@ -6,6 +6,7 @@ import patronPortrait from "../../public/images/isaiah-macwealth-grand-patron-po
 import galleryChurchRegistration from "../../public/images/royalty-academy-church-registration.jpg";
 import galleryOutdoorRegistration from "../../public/images/royalty-academy-outdoor-registration.jpg";
 import { galleryGroups } from "./gallery-data";
+import VideoPlayer from "./video-player";
 
 const trainingTopics = [
   {
@@ -161,6 +162,34 @@ const testimonialCards = [
   ...card,
   src: `/images/testimonials/impact-1000-testimonial-${card.slug}.jpeg`,
 }));
+
+const videos = [
+  {
+    id: "juDKw9u1kgo",
+    title: "Certificate Award Ceremony (2nd Cohort, Oct 2026)",
+    location: "Port Harcourt, Rivers State",
+  },
+  {
+    id: "K12Kopxir0M",
+    title: "Free Skill Acquisition Training (2nd Cohort)",
+    location: "Port Harcourt, Rivers State",
+  },
+  {
+    id: "YnsiWISQT2c",
+    title: "Certificate Award Ceremony (1st Cohort, Aug 2026)",
+    location: "Port Harcourt, Rivers State",
+  },
+  {
+    id: "ES4QU0zZ0II",
+    title: "Free Skill Acquisition Training (1st Cohort)",
+    location: "Port Harcourt, Rivers State",
+  },
+  {
+    id: "WfACJPJPfG4",
+    title: "Free Skill Acquisition Training",
+    location: "Lagos State",
+  },
+] as const;
 
 const navLinks = [
   { href: "#programs", label: "Programs" },
@@ -823,6 +852,48 @@ export default function Home() {
                   </a>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* VIDEOS */}
+        <section className="py-24 bg-surface" id="videos">
+          <div className="max-w-7xl mx-auto px-6 space-y-16">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <span className="text-tertiary font-bold tracking-widest uppercase text-sm">
+                Watch
+              </span>
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface">
+                IMPACT 1000 in Action
+              </h2>
+              <div className="gold-accent-line" />
+              <p className="text-on-surface-variant max-w-2xl mt-4">
+                Trainings and certificate award ceremonies from our Lagos and
+                Rivers State cohorts.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {videos.map((video, i) => (
+                <figure
+                  key={video.id}
+                  className={`space-y-3 ${i === 0 ? "md:col-span-2" : ""}`}
+                >
+                  <div className="rounded-2xl overflow-hidden shadow-lg border border-surface-variant">
+                    <VideoPlayer
+                      videoId={video.id}
+                      title={`IMPACT 1000 ${video.title}, ${video.location}`}
+                    />
+                  </div>
+                  <figcaption>
+                    <div className="font-headline font-bold text-on-surface">
+                      {video.title}
+                    </div>
+                    <div className="text-sm text-on-surface-variant">
+                      {video.location}
+                    </div>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
